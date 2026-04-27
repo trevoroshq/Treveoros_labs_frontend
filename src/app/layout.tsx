@@ -5,7 +5,7 @@ import { AuthProvider } from "@/lib/auth-context";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: {
-    default: "TREVORORS LABS — Developer Training & Selection",
+    default: "TREVORORS LABS",
     template: "%s | TREVORORS LABS",
   },
   description:
