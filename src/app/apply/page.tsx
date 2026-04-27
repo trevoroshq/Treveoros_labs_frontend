@@ -4,15 +4,11 @@ import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import Navbar from '@/components/Navbar';
 import { useAuth } from '@/lib/auth-context';
-import { applicationsApi } from '@/lib/api';
+import { applicationsApi, batchesApi } from '@/lib/api';
 
 /* ─── Data ─────────────────────────────────────────────────────── */
 const DEGREES = ['B.Tech', 'M.Tech', 'BCA', 'MCA', 'BE', 'ME', 'B.Sc', 'M.Sc', 'Other'];
 const YEARS = ['1st Year', '2nd Year', '3rd Year', '4th Year', 'Graduated', 'Post Graduate'];
-const BATCHES = [
-  { label: '4 May 2026', value: '2026-05-04' },
-  { label: '18 May 2026', value: '2026-05-18' },
-];
 const TRACK_PRICES: Record<string, number> = {
   FOUNDATION: 2000,
   BUILDER: 4000,
@@ -85,6 +81,26 @@ function ApplyForm() {
   const [loading, setLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState('');
+  const [batchesList, setBatchesList] = useState<{label: string, value: string, track: string}[]>([]);
+
+  // Fetch active batches dynamically
+  useEffect(() => {
+    if (user) {
+      batchesApi.list()
+        .then((data: any) => {
+          const activeBatches = data.filter((b: any) => b.isActive);
+          const mapped = activeBatches.map((b: any) => {
+            const date = new Date(b.startDate);
+            const label = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
+            const value = b.startDate.split('T')[0];
+            return { label, value, track: b.track };
+          });
+          mapped.sort((a: any, b: any) => new Date(a.value).getTime() - new Date(b.value).getTime());
+          setBatchesList(mapped);
+        })
+        .catch(console.error);
+    }
+  }, [user]);
 
   // Pre-fill name/email from auth user
   useEffect(() => {
@@ -153,7 +169,7 @@ function ApplyForm() {
                 We&apos;ll review your application within 48 hours.
               </p>
               <p style={{ marginBottom: 32, color: 'var(--color-gray-500)' }}>
-                Selected: <strong>{form.track === 'FOUNDATION' ? 'Foundation Track' : 'Builder Track'}</strong> · Batch: <strong>{BATCHES.find(b => b.value === form.batch)?.label}</strong>
+                Selected: <strong>{form.track === 'FOUNDATION' ? 'Foundation Track' : 'Builder Track'}</strong> · Batch: <strong>{batchesList.find(b => b.value === form.batch)?.label || form.batch}</strong>
               </p>
               <button onClick={() => router.push('/dashboard')} className="btn btn--primary">
                 Go to Dashboard <span className="btn-arrow">→</span>
@@ -214,6 +230,9 @@ function ApplyForm() {
   };
 
   const price = form.track ? TRACK_PRICES[form.track] : null;
+
+  const availableBatches = form.track ? batchesList.filter(b => b.track === form.track) : [];
+  const uniqueBatches = Array.from(new Map(availableBatches.map(item => [item.value, item])).values());
 
   return (
     <>
@@ -385,18 +404,24 @@ function ApplyForm() {
                   <div className="form-group">
                     <label className="form-label">Select Batch Start Date</label>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
-                      {BATCHES.map(b => (
-                        <button
-                          key={b.value}
-                          type="button"
-                          className={`apply-batch-option ${form.batch === b.value ? 'apply-batch-option--active' : ''}`}
-                          onClick={() => update('batch', b.value)}
-                        >
-                          <div style={{ fontSize: '1.25rem', marginBottom: 4 }}>📅</div>
-                          <div style={{ fontWeight: 600, color: 'var(--color-navy)', fontSize: '0.95rem' }}>{b.label}</div>
-                          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--color-gray-400)', marginTop: 2 }}>COHORT 2026</div>
-                        </button>
-                      ))}
+                      {uniqueBatches.length > 0 ? (
+                        uniqueBatches.map(b => (
+                          <button
+                            key={b.value}
+                            type="button"
+                            className={`apply-batch-option ${form.batch === b.value ? 'apply-batch-option--active' : ''}`}
+                            onClick={() => update('batch', b.value)}
+                          >
+                            <div style={{ fontSize: '1.25rem', marginBottom: 4 }}>📅</div>
+                            <div style={{ fontWeight: 600, color: 'var(--color-navy)', fontSize: '0.95rem' }}>{b.label}</div>
+                            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.65rem', color: 'var(--color-gray-400)', marginTop: 2 }}>COHORT {b.label.split(' ').pop()}</div>
+                          </button>
+                        ))
+                      ) : (
+                        <div style={{ color: 'var(--color-gray-500)', fontSize: '0.9rem', gridColumn: '1 / -1', padding: '12px 0' }}>
+                          {form.track ? 'No active batches available for this track right now.' : 'Please select a track first to view available batches.'}
+                        </div>
+                      )}
                     </div>
                   </div>
 
