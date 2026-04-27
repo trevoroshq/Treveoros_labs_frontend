@@ -88,7 +88,8 @@ function ApplyForm() {
     if (user) {
       batchesApi.list()
         .then((data: any) => {
-          const activeBatches = data.filter((b: any) => b.isActive);
+          const batches = data.batches || [];
+          const activeBatches = batches.filter((b: any) => b.isActive);
           const mapped = activeBatches.map((b: any) => {
             const date = new Date(b.startDate);
             const label = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
