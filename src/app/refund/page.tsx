@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Refund Policy — TREVOROS LABS',
-  description: 'Refund Policy for TREVOROS LABS programs by TREVOROS FINTECH PRIVATE LIMITED.',,
+  description: 'Refund Policy for TREVOROS LABS programs by TREVOROS FINTECH PRIVATE LIMITED.',
 };
 
 export default function RefundPolicy() {
