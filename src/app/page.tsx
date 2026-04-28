@@ -41,8 +41,6 @@ export default function HomePage() {
           </div>
 
           <div className="hero__trust">
-            <span className="hero__trust-item">✓ 7-day refund guarantee</span>
-            <span className="hero__trust-sep">·</span>
             <span className="hero__trust-item">✓ Results reviewed in 48 hrs</span>
             <span className="hero__trust-sep">·</span>
             <span className="hero__trust-item">✓ No hidden fees</span>
@@ -85,11 +83,7 @@ export default function HomePage() {
               <span className="trust-strip__icon">💼</span>
               <span className="trust-strip__text">Paid internship for top builders</span>
             </div>
-            <span className="trust-strip__divider" />
-            <div className="trust-strip__item">
-              <span className="trust-strip__icon">🔄</span>
-              <span className="trust-strip__text">7-day refund guarantee</span>
-            </div>
+
           </div>
         </div>
       </div>
@@ -497,7 +491,6 @@ export default function HomePage() {
                   Read FAQ
                 </Link>
               </div>
-              <p className="cta-section__guarantee">🔒 7-day money-back guarantee · No hidden fees · Results in 48 hrs</p>
             </div>
           </ScrollReveal>
         </div>
