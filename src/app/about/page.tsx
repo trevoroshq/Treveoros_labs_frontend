@@ -3,10 +3,10 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'About Us — TREVORORS LABS',
-  description: 'Learn about TREVORORS LABS — our mission to build the next generation of world-class developers through performance-based training and selection.',
+  title: 'About Us — TREVOROS LABS',
+  description: 'Learn about TREVOROS LABS — our mission to build the next generation of world-class developers through performance-based training and selection.',
   openGraph: {
-    title: 'About TREVORORS LABS',
+    title: 'About TREVOROS LABS',
     description: 'Performance-based developer training and selection. Our mission, vision and the team behind it.',
     type: 'website',
   },
@@ -27,7 +27,7 @@ export default function AboutPage() {
               Building the next generation<br />of world-class developers
             </h1>
             <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.75)', maxWidth: 600, margin: '0 auto' }}>
-              TREVORORS LABS is a performance-based developer training platform where your work speaks louder than your resume.
+              TREVOROS LABS is a performance-based developer training platform where your work speaks louder than your resume.
             </p>
           </div>
         </section>
@@ -40,7 +40,7 @@ export default function AboutPage() {
               We believe that traditional hiring is broken. Technical talent isn't measured by a 45-minute whiteboard session or a polished LinkedIn profile — it's demonstrated through actual work, consistent execution, and the ability to solve real problems under real conditions.
             </p>
             <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--color-gray-600)', marginBottom: 24 }}>
-              TREVORORS LABS was built to close that gap. We select cohorts of committed developers, put them through structured project-based learning across two tracks — <strong>Foundation</strong> and <strong>Builder</strong> — and surface the ones who genuinely perform.
+              TREVOROS LABS was built to close that gap. We select cohorts of committed developers, put them through structured project-based learning across two tracks — <strong>Foundation</strong> and <strong>Builder</strong> — and surface the ones who genuinely perform.
             </p>
             <p style={{ fontSize: '1.05rem', lineHeight: 1.8, color: 'var(--color-gray-600)' }}>
               The result: certified developers with portfolios that prove their skills, not just their interview polish.

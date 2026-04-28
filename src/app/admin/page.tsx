@@ -81,7 +81,7 @@ export default function AdminDashboard() {
       <div style={{ marginBottom: 32 }}>
         <h1 style={{ fontSize: '1.75rem', fontWeight: 700, marginBottom: 4 }}>Dashboard</h1>
         <p style={{ color: 'var(--color-gray-500)', fontSize: '0.9rem' }}>
-          Overview of the TREVORORS LABS platform
+          Overview of the TREVOROS LABS platform
         </p>
       </div>
 

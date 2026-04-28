@@ -72,7 +72,7 @@ export default function RegisterPage() {
         <div className="auth-card">
           <div className="auth-card__header">
             <h2 className="auth-card__title">Create Account</h2>
-            <p className="auth-card__subtitle">Join TREVORORS LABS and start building</p>
+            <p className="auth-card__subtitle">Join TREVOROS LABS and start building</p>
           </div>
 
           {/* OAuth Buttons */}

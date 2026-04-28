@@ -9,8 +9,8 @@ export default function Footer() {
         <div className="footer__inner">
           <div className="footer__brand">
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-              <img src="/logo_.png" alt="TREVORORS LABS" style={{ height: '32px', width: 'auto' }} />
-              <div className="footer__brand-name" style={{ margin: 0 }}>TREVORORS LABS</div>
+              <img src="/logo_.png" alt="TREVOROS LABS" style={{ height: '32px', width: 'auto' }} />
+              <div className="footer__brand-name" style={{ margin: 0 }}>TREVOROS LABS</div>
             </div>
             <p className="footer__brand-desc">
               A TREVOROS FINTECH PRIVATE LIMITED initiative to make students ready

@@ -318,7 +318,7 @@ export default function HomePage() {
                   anything production-ready.
                 </p>
                 <p className="behind-program__desc">
-                  So we built TrevorOS Labs — a company initiative specifically
+                  So we built TREVOROS LABS — a company initiative specifically
                   designed to bridge that gap. Two tracks, real projects, performance
                   scores that mean something, and mentors who&apos;ve actually shipped
                   things in the industry.

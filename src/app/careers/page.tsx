@@ -3,10 +3,10 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Careers — TREVORORS LABS',
-  description: 'Join the TREVORORS LABS team. We\'re building the future of developer education. See open positions and what it\'s like to work with us.',
+  title: 'Careers — TREVOROS LABS',
+  description: 'Join the TREVOROS LABS team. We\'re building the future of developer education. See open positions and what it\'s like to work with us.',
   openGraph: {
-    title: 'Careers at TREVORORS LABS',
+    title: 'Careers at TREVOROS LABS',
     description: 'Join our team building the future of developer education.',
     type: 'website',
   },
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
 const openings = [
   { role: 'Curriculum Engineer', type: 'Full-Time · Remote', dept: 'Education', desc: 'Design and iterate on project-based curriculum for our Foundation and Builder tracks. You\'ll work closely with cohort leads to build exercises that genuinely challenge and grow developers.' },
-  { role: 'Full-Stack Engineer', type: 'Full-Time · Remote', dept: 'Engineering', desc: 'Build and scale the TREVORORS LABS platform. You\'ll work on everything from student dashboards to certificate verification systems and payment infrastructure.' },
+  { role: 'Full-Stack Engineer', type: 'Full-Time · Remote', dept: 'Engineering', desc: 'Build and scale the TREVOROS LABS platform. You\'ll work on everything from student dashboards to certificate verification systems and payment infrastructure.' },
   { role: 'Community Manager', type: 'Part-Time · Remote', dept: 'Community', desc: 'Nurture our growing alumni network, run cohort onboarding, and keep our WhatsApp and Discord communities thriving and engaged.' },
   { role: 'Growth & Partnerships', type: 'Full-Time · Remote', dept: 'Business', desc: 'Drive student acquisition, build employer partnerships, and own our go-to-market strategy across India and beyond.' },
 ];
@@ -41,7 +41,7 @@ export default function CareersPage() {
         {/* Perks */}
         <section style={{ padding: '80px 0', background: 'var(--color-bg-alt, #f8fafc)' }}>
           <div className="container">
-            <h2 style={{ fontSize: '1.75rem', fontWeight: 700, marginBottom: 40, color: 'var(--color-navy)', textAlign: 'center' }}>Why TREVORORS LABS?</h2>
+            <h2 style={{ fontSize: '1.75rem', fontWeight: 700, marginBottom: 40, color: 'var(--color-navy)', textAlign: 'center' }}>Why TREVOROS LABS?</h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 24 }}>
               {[
                 { icon: '🌍', label: '100% Remote' },

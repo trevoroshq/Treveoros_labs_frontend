@@ -3,8 +3,8 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Refund Policy — TrevorOS Labs',
-  description: 'Refund Policy for TrevorOS Labs programs by TREVOROS FINTECH PRIVATE LIMITED.',
+  title: 'Refund Policy — TREVOROS LABS',
+  description: 'Refund Policy for TREVOROS LABS programs by TREVOROS FINTECH PRIVATE LIMITED.',,
 };
 
 export default function RefundPolicy() {
@@ -26,7 +26,7 @@ export default function RefundPolicy() {
               <section className="legal-section">
                 <h2>1. Our Commitment</h2>
                 <p>
-                  At <strong>TrevorOS Labs</strong>, operated by{' '}
+                  At <strong>TREVOROS LABS</strong>, operated by{' '}
                   <strong>TREVOROS FINTECH PRIVATE LIMITED</strong>, we stand behind the quality of
                   our programs. We offer a transparent refund policy to ensure you can enrol with
                   confidence.

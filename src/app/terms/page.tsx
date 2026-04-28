@@ -3,8 +3,8 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Terms of Service — TrevorOS Labs',
-  description: 'Terms of Service governing your use of TrevorOS Labs, a program by TREVOROS FINTECH PRIVATE LIMITED.',
+  title: 'Terms of Service — TREVOROS LABS',
+  description: 'Terms of Service governing your use of TREVOROS LABS, a program by TREVOROS FINTECH PRIVATE LIMITED.',
 };
 
 export default function TermsOfService() {
@@ -29,7 +29,7 @@ export default function TermsOfService() {
                   These Terms of Service (&ldquo;Terms&rdquo;) constitute a legally binding agreement
                   between you (&ldquo;Student,&rdquo; &ldquo;Applicant,&rdquo; or &ldquo;User&rdquo;)
                   and <strong>TREVOROS FINTECH PRIVATE LIMITED</strong>, a company incorporated
-                  under the Companies Act, 2013, operating the <strong>TrevorOS Labs</strong>{' '}
+                  under the Companies Act, 2013, operating the <strong>TREVOROS LABS</strong>{' '}
                   platform (&ldquo;Platform&rdquo;).
                 </p>
                 <p>
@@ -42,7 +42,7 @@ export default function TermsOfService() {
               <section className="legal-section">
                 <h2>2. Program Overview</h2>
                 <p>
-                  TrevorOS Labs offers structured, performance-based developer training programs
+                  TREVOROS LABS offers structured, performance-based developer training programs
                   (&ldquo;Programs&rdquo;) delivered in cohort batches:
                 </p>
                 <ul>
@@ -111,7 +111,7 @@ export default function TermsOfService() {
                 <p>
                   Certificate grades are final and non-negotiable. Certificates are issued
                   electronically and carry a unique verification code. We do not guarantee employment
-                  outcomes as a result of holding a TrevorOS Labs certificate.
+                  outcomes as a result of holding a TREVOROS LABS certificate.
                 </p>
               </section>
 

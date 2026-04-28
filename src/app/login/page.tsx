@@ -53,7 +53,7 @@ export default function LoginPage() {
         <div className="auth-card">
           <div className="auth-card__header">
             <h2 className="auth-card__title">Welcome Back</h2>
-            <p className="auth-card__subtitle">Sign in to your TREVORORS LABS account</p>
+            <p className="auth-card__subtitle">Sign in to your TREVOROS LABS account</p>
           </div>
 
           {/* OAuth Buttons */}

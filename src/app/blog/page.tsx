@@ -3,10 +3,10 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Blog — TREVORORS LABS',
-  description: 'Insights on developer education, tech careers, and engineering excellence from the TREVORORS LABS team.',
+  title: 'Blog — TREVOROS LABS',
+  description: 'Insights on developer education, tech careers, and engineering excellence from the TREVOROS LABS team.',
   openGraph: {
-    title: 'TREVORORS LABS Blog',
+    title: 'TREVOROS LABS Blog',
     description: 'Developer education, career insights, and engineering best practices.',
     type: 'website',
   },
@@ -34,7 +34,7 @@ export default function BlogPage() {
         <section style={{ padding: '96px 0 64px', textAlign: 'center', background: 'linear-gradient(135deg, var(--color-navy) 0%, #1e3a5f 100%)', color: '#fff' }}>
           <div className="container">
             <div className="section-tag" style={{ justifyContent: 'center', marginBottom: 24 }}><span>Insights</span></div>
-            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, marginBottom: 16 }}>TREVORORS LABS Blog</h1>
+            <h1 style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 800, marginBottom: 16 }}>TREVOROS LABS Blog</h1>
             <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.75)', maxWidth: 520, margin: '0 auto' }}>
               Practical insights on developer education, engineering careers, and building products that matter.
             </p>

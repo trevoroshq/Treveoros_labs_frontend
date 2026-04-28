@@ -138,7 +138,7 @@ function ApplyForm() {
               <div style={{ fontSize: '3rem', marginBottom: 24 }}>🔒</div>
               <h2 style={{ marginBottom: 8 }}>Account Required</h2>
               <p style={{ color: 'var(--color-gray-500)', marginBottom: 32, maxWidth: 400, margin: '0 auto 32px' }}>
-                You need a TREVORORS LABS account to submit an application.
+                You need a TREVOROS LABS account to submit an application.
                 Create one for free — it only takes a minute!
               </p>
               <div style={{ display: 'flex', gap: 12, justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -243,7 +243,7 @@ function ApplyForm() {
           <div className="apply-card">
             {/* Header */}
             <div className="apply-card__header">
-              <h2 className="apply-card__title">Apply to TREVORORS LABS</h2>
+              <h2 className="apply-card__title">Apply to TREVOROS LABS</h2>
               <p className="apply-card__subtitle">Complete all 3 steps to submit your application</p>
             </div>
 

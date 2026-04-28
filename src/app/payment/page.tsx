@@ -106,7 +106,7 @@ function CheckoutForm() {
           key: RAZORPAY_KEY,
           amount: amountPaise,
           currency: 'INR',
-          name: 'TREVORORS LABS',
+          name: 'TREVOROS LABS',
           description: `${track === 'FOUNDATION' ? 'Foundation' : 'Builder'} Track`,
           order_id: orderData.razorpayOrderId,
           prefill: {

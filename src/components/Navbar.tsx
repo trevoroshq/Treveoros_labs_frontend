@@ -18,8 +18,8 @@ export default function Navbar() {
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="navbar__inner">
           <Link href="/" className="navbar__brand" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <img src="/logo_.png" alt="TREVORORS LABS" style={{ height: '32px', width: 'auto' }} />
-            <span className="navbar__brand-text">TREVORORS LABS</span>
+            <img src="/logo_.png" alt="TREVOROS LABS" style={{ height: '32px', width: 'auto' }} />
+            <span className="navbar__brand-text">TREVOROS LABS</span>
           </Link>
 
           <div className="navbar__links">

@@ -3,8 +3,8 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Privacy Policy — TrevorOS Labs',
-  description: 'Privacy Policy of TrevorOS Labs, a program by TREVOROS FINTECH PRIVATE LIMITED.',
+  title: 'Privacy Policy — TREVOROS LABS',
+  description: 'Privacy Policy of TREVOROS LABS, a program by TREVOROS FINTECH PRIVATE LIMITED.',
 };
 
 export default function PrivacyPolicy() {
@@ -28,7 +28,7 @@ export default function PrivacyPolicy() {
                 <p>
                   This Privacy Policy describes how <strong>TREVOROS FINTECH PRIVATE LIMITED</strong>{' '}
                   (&ldquo;Company,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;),
-                  operating the <strong>TrevorOS Labs</strong> platform at{' '}
+                  operating the <strong>TREVOROS LABS</strong> platform at{' '}
                   <a href="https://labs.trevoros.com">labs.trevoros.com</a>, collects, uses, stores,
                   and discloses personal information when you visit our website, apply to a program,
                   or enrol as a student.
