@@ -458,63 +458,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Testimonials ── */}
-      <section className="section section--gray">
-        <div className="container">
-          <ScrollReveal>
-            <div className="tracks__header">
-              <div className="section-tag"><span>Student Outcomes</span></div>
-              <h2>Builders Who Shipped Real Work</h2>
-              <p>Not marketing fluff — actual results from students who showed up and delivered.</p>
-            </div>
-          </ScrollReveal>
-          <div className="testimonials__grid">
-            <ScrollReveal delay={1}>
-              <div className="testimonial-card">
-                <div className="testimonial-card__stars">★★★★★</div>
-                <p className="testimonial-card__quote">&ldquo;I spent 6 months watching YouTube tutorials and felt like I knew nothing. 6 weeks in Foundation Track and I shipped my first full-stack app. The mentor feedback was brutal — but exactly what I needed.&rdquo;</p>
-                <div className="testimonial-card__footer">
-                  <div className="testimonial-card__avatar" style={{ background: '#6366f1' }}>RK</div>
-                  <div className="testimonial-card__info">
-                    <div className="testimonial-card__name">Rishi Kumar</div>
-                    <div className="testimonial-card__meta">Foundation → Builder Track</div>
-                  </div>
-                  <span className="testimonial-card__outcome testimonial-card__outcome--exceptional">Exceptional</span>
-                </div>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={2}>
-              <div className="testimonial-card">
-                <div className="testimonial-card__stars">★★★★★</div>
-                <p className="testimonial-card__quote">&ldquo;The certificate verification link on my resume actually gets clicked. Two interviewers mentioned they verified it before calling me. That&apos;s the difference between a real credential and a PDF.&rdquo;</p>
-                <div className="testimonial-card__footer">
-                  <div className="testimonial-card__avatar" style={{ background: '#14b8a6' }}>AP</div>
-                  <div className="testimonial-card__info">
-                    <div className="testimonial-card__name">Ananya Pillai</div>
-                    <div className="testimonial-card__meta">Builder Track · Core Intern</div>
-                  </div>
-                  <span className="testimonial-card__outcome testimonial-card__outcome--internship">Internship</span>
-                </div>
-              </div>
-            </ScrollReveal>
-            <ScrollReveal delay={3}>
-              <div className="testimonial-card">
-                <div className="testimonial-card__stars">★★★★★</div>
-                <p className="testimonial-card__quote">&ldquo;₹2,000 for Foundation felt like a lot when I was a student. Looking back, it&apos;s the best money I spent. I upgraded to Builder at 50% off and now I&apos;m building production systems at my job.&rdquo;</p>
-                <div className="testimonial-card__footer">
-                  <div className="testimonial-card__avatar" style={{ background: '#f59e0b' }}>MV</div>
-                  <div className="testimonial-card__info">
-                    <div className="testimonial-card__name">Mohammed Vaseem</div>
-                    <div className="testimonial-card__meta">Foundation Track</div>
-                  </div>
-                  <span className="testimonial-card__outcome testimonial-card__outcome--placed">Placed</span>
-                </div>
-              </div>
-            </ScrollReveal>
-          </div>
-        </div>
-      </section>
-
       {/* ── FAQ ── */}
       <section id="faq" className="section">
         <div className="container">
