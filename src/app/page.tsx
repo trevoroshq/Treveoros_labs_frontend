@@ -4,15 +4,8 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollReveal from '@/components/ScrollReveal';
 import Roadmap from '@/components/Roadmap';
+import FAQ from '@/components/FAQ';
 import Link from 'next/link';
-
-const leaderboardData = [
-  { rank: 1, name: 'Arjun Mehta', initials: 'AM', color: '#6366f1', track: 'BUILDER', score: 972 },
-  { rank: 2, name: 'Priya Sharma', initials: 'PS', color: '#ec4899', track: 'BUILDER', score: 958 },
-  { rank: 3, name: 'Karthik Raj', initials: 'KR', color: '#14b8a6', track: 'FOUNDATION', score: 941 },
-  { rank: 4, name: 'Neha Gupta', initials: 'NG', color: '#f59e0b', track: 'BUILDER', score: 928 },
-  { rank: 5, name: 'Rohan Patel', initials: 'RP', color: '#8b5cf6', track: 'FOUNDATION', score: 915 },
-];
 
 export default function HomePage() {
   return (
@@ -47,19 +40,12 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="hero__stats">
-            <div>
-              <div className="hero__stat-value">500+</div>
-              <div className="hero__stat-label">Developers Trained</div>
-            </div>
-            <div>
-              <div className="hero__stat-value">92%</div>
-              <div className="hero__stat-label">Completion Rate</div>
-            </div>
-            <div>
-              <div className="hero__stat-value">4.9</div>
-              <div className="hero__stat-label">Avg Rating</div>
-            </div>
+          <div className="hero__trust">
+            <span className="hero__trust-item">✓ 7-day refund guarantee</span>
+            <span className="hero__trust-sep">·</span>
+            <span className="hero__trust-item">✓ Results reviewed in 48 hrs</span>
+            <span className="hero__trust-sep">·</span>
+            <span className="hero__trust-item">✓ No hidden fees</span>
           </div>
         </div>
 
@@ -76,7 +62,39 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Program Overview (Story 1) ── */}
+      {/* ── Trust Strip ── */}
+      <div className="trust-strip">
+        <div className="container">
+          <div className="trust-strip__inner">
+            <div className="trust-strip__item">
+              <span className="trust-strip__icon">🎯</span>
+              <span className="trust-strip__text">Performance-based scoring</span>
+            </div>
+            <span className="trust-strip__divider" />
+            <div className="trust-strip__item">
+              <span className="trust-strip__icon">👨‍💻</span>
+              <span className="trust-strip__text">Industry practitioner mentors</span>
+            </div>
+            <span className="trust-strip__divider" />
+            <div className="trust-strip__item">
+              <span className="trust-strip__icon">🏆</span>
+              <span className="trust-strip__text">Verifiable certificate</span>
+            </div>
+            <span className="trust-strip__divider" />
+            <div className="trust-strip__item">
+              <span className="trust-strip__icon">💼</span>
+              <span className="trust-strip__text">Paid internship for top builders</span>
+            </div>
+            <span className="trust-strip__divider" />
+            <div className="trust-strip__item">
+              <span className="trust-strip__icon">🔄</span>
+              <span className="trust-strip__text">7-day refund guarantee</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* ── Program Overview ── */}
       <section id="tracks" className="section tracks">
         <div className="container">
           <ScrollReveal>
@@ -89,7 +107,6 @@ export default function HomePage() {
             </div>
           </ScrollReveal>
 
-          {/* Highlight Banners */}
           <ScrollReveal>
             <div className="track-banners">
               <div className="track-banner track-banner--offer">
@@ -108,7 +125,6 @@ export default function HomePage() {
           </ScrollReveal>
 
           <div className="tracks__grid">
-            {/* Foundation Track Card */}
             <ScrollReveal delay={1}>
               <div className="track-card">
                 <div className="track-card__head">
@@ -157,7 +173,6 @@ export default function HomePage() {
               </div>
             </ScrollReveal>
 
-            {/* Builder Track Card */}
             <ScrollReveal delay={2}>
               <div className="track-card track-card--featured">
                 <div className="track-card__head">
@@ -209,7 +224,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── Visual Roadmap (Stories 2, 3, 4) ── */}
+      {/* ── Visual Roadmap ── */}
       <section id="roadmap" className="section section--gray">
         <div className="container">
           <ScrollReveal>
@@ -269,7 +284,6 @@ export default function HomePage() {
                 <h3 className="step-card__title">Build &amp; Learn</h3>
                 <p className="step-card__desc">
                   Dive into weekly projects, code reviews, and mentorship.
-                  Your performance is tracked on the live leaderboard.
                 </p>
                 <div className="step-card__connector" />
               </div>
@@ -287,8 +301,126 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Behind the Program ── */}
+      <section className="section section--navy behind-program">
+        <div className="container">
+          <div className="behind-program__grid">
+            <ScrollReveal>
+              <div className="behind-program__text">
+                <div className="section-tag section-tag--light">
+                  <span>Behind the Program</span>
+                </div>
+                <h2 className="behind-program__title">Why We Built This</h2>
+                <p className="behind-program__desc">
+                  TREVOROS FINTECH PRIVATE LIMITED isn&apos;t just a company — it&apos;s a
+                  conviction. We watched talented students graduate with degrees but
+                  struggle to write a single working API, debug a real bug, or ship
+                  anything production-ready.
+                </p>
+                <p className="behind-program__desc">
+                  So we built TrevorOS Labs — a company initiative specifically
+                  designed to bridge that gap. Two tracks, real projects, performance
+                  scores that mean something, and mentors who&apos;ve actually shipped
+                  things in the industry.
+                </p>
+                <p className="behind-program__desc">
+                  No padding. No fluff. Just the skills and mindset the industry
+                  actually demands.
+                </p>
+                <div className="behind-program__contact">
+                  <a href="tel:+919128699369" className="behind-program__contact-item">
+                    <span>📞</span>
+                    <span>+91 91286 99369</span>
+                  </a>
+                  <a href="mailto:labs@trevoros.com" className="behind-program__contact-item">
+                    <span>✉️</span>
+                    <span>labs@trevoros.com</span>
+                  </a>
+                  <a
+                    href="https://wa.me/919128699369?text=Hi%2C%20I%27m%20interested%20in%20TrevorOS%20Labs."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="behind-program__contact-item behind-program__contact-item--whatsapp"
+                  >
+                    <span>💬</span>
+                    <span>Chat on WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={2}>
+              <div className="behind-program__card">
+                <div className="behind-program__card-tag">COMPANY INITIATIVE</div>
+                <div className="behind-program__card-name">TREVOROS FINTECH<br />PRIVATE LIMITED</div>
+                <div className="behind-program__card-divider" />
+                <div className="behind-program__card-stat">
+                  <span className="behind-program__card-stat-label">Mission</span>
+                  <span className="behind-program__card-stat-value">Skills + Mindset</span>
+                </div>
+                <div className="behind-program__card-stat">
+                  <span className="behind-program__card-stat-label">Tracks Launched</span>
+                  <span className="behind-program__card-stat-value">Foundation + Builder</span>
+                </div>
+                <div className="behind-program__card-stat">
+                  <span className="behind-program__card-stat-label">Outcome</span>
+                  <span className="behind-program__card-stat-value">Job-Ready Developers</span>
+                </div>
+                <div className="behind-program__card-stat">
+                  <span className="behind-program__card-stat-label">Commitment</span>
+                  <span className="behind-program__card-stat-value">7-Day Money Back</span>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Who Is This For ── */}
+      <section className="section section--gray">
+        <div className="container">
+          <ScrollReveal>
+            <div className="tracks__header">
+              <div className="section-tag"><span>Eligibility</span></div>
+              <h2>Is This Program Right for You?</h2>
+              <p>We&apos;re selective — not to gatekeep, but to protect your time and ours.</p>
+            </div>
+          </ScrollReveal>
+          <div className="for-whom__grid">
+            <ScrollReveal delay={1}>
+              <div className="for-whom__col for-whom__col--yes">
+                <div className="for-whom__col-header">
+                  <span className="for-whom__badge for-whom__badge--yes">✓ Great Fit</span>
+                  <h3>Apply if you are…</h3>
+                </div>
+                <ul className="for-whom__list">
+                  <li className="for-whom__item for-whom__item--yes">A CS/IT student who wants real-world projects beyond college curriculum</li>
+                  <li className="for-whom__item for-whom__item--yes">A self-taught developer looking for structured validation and a verifiable credential</li>
+                  <li className="for-whom__item for-whom__item--yes">A career switcher committed to 15+ hrs/week consistently</li>
+                  <li className="for-whom__item for-whom__item--yes">Someone who wants honest mentor-graded feedback — not just participation trophies</li>
+                  <li className="for-whom__item for-whom__item--yes">Motivated by outcomes: you want to build and ship, not just watch videos</li>
+                </ul>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={2}>
+              <div className="for-whom__col for-whom__col--no">
+                <div className="for-whom__col-header">
+                  <span className="for-whom__badge for-whom__badge--no">✕ Not a Match</span>
+                  <h3>Skip if you…</h3>
+                </div>
+                <ul className="for-whom__list">
+                  <li className="for-whom__item for-whom__item--no">Want a casual, low-effort certificate just to put on your LinkedIn</li>
+                  <li className="for-whom__item for-whom__item--no">Can&apos;t commit time consistently — sessions are live and project-heavy</li>
+                  <li className="for-whom__item for-whom__item--no">Expect guaranteed job placement regardless of performance</li>
+                  <li className="for-whom__item for-whom__item--no">Are looking for a self-paced, go-at-your-own-speed course</li>
+                </ul>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
       {/* ── Certificates Preview ── */}
-      <section id="certificates" className="section section--gray">
+      <section id="certificates" className="section">
         <div className="container">
           <ScrollReveal>
             <div className="tracks__header" style={{ marginBottom: '3rem' }}>
@@ -299,78 +431,103 @@ export default function HomePage() {
               <p>Your performance on weekly projects dictates your final grade. Stand out from the crowd with proof of what you can actually build.</p>
             </div>
           </ScrollReveal>
-          
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', alignItems: 'flex-start' }}>
+
+          <div className="certificates-grid">
             <ScrollReveal delay={1}>
-              <div style={{ textAlign: 'center', background: 'var(--color-white)', padding: '1rem', borderRadius: '12px', border: '1px solid var(--color-gray-200)', boxShadow: 'var(--shadow-sm)' }}>
-                <img src="/Certificate_Exceptional.png" alt="Exceptional Certificate" style={{ width: '100%', borderRadius: '8px', boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }} />
-                <h3 style={{ margin: '1.25rem 0 0.5rem', color: 'var(--color-navy)', fontSize: '1.2rem' }}>Exceptional Rating</h3>
-                <p style={{ fontSize: '0.85rem', color: 'var(--color-gray-500)', margin: '0' }}>Top 10% performance. Guaranteed interviews and placement support for Builder graduates.</p>
+              <div className="certificate-card">
+                <img src="/Certificate_Exceptional.png" alt="Exceptional Certificate" />
+                <h3>Exceptional Rating</h3>
+                <p>Top 10% performance. Guaranteed interviews and placement support for Builder graduates.</p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={2}>
-              <div style={{ textAlign: 'center', background: 'var(--color-white)', padding: '1rem', borderRadius: '12px', border: '1px solid var(--color-gray-200)', boxShadow: 'var(--shadow-sm)' }}>
-                <img src="/Certificate_strong.png" alt="Strong Certificate" style={{ width: '100%', borderRadius: '8px', boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }} />
-                <h3 style={{ margin: '1.25rem 0 0.5rem', color: 'var(--color-navy)', fontSize: '1.2rem' }}>Strong Rating</h3>
-                <p style={{ fontSize: '0.85rem', color: 'var(--color-gray-500)', margin: '0' }}>Completed all advanced project requirements. Proves a strong technical foundation to employers.</p>
+              <div className="certificate-card">
+                <img src="/Certificate_strong.png" alt="Strong Certificate" />
+                <h3>Strong Rating</h3>
+                <p>Completed all advanced project requirements. Proves a strong technical foundation to employers.</p>
               </div>
             </ScrollReveal>
             <ScrollReveal delay={3}>
-              <div style={{ textAlign: 'center', background: 'var(--color-white)', padding: '1rem', borderRadius: '12px', border: '1px solid var(--color-gray-200)', boxShadow: 'var(--shadow-sm)' }}>
-                <img src="/Certificate_Satisfactory.png" alt="Satisfactory Certificate" style={{ width: '100%', borderRadius: '8px', boxShadow: '0 4px 20px rgba(0,0,0,0.08)' }} />
-                <h3 style={{ margin: '1.25rem 0 0.5rem', color: 'var(--color-navy)', fontSize: '1.2rem' }}>Satisfactory Rating</h3>
-                <p style={{ fontSize: '0.85rem', color: 'var(--color-gray-500)', margin: '0' }}>Successfully shipped the minimum requirements. Demonstrates base level full-stack competence.</p>
+              <div className="certificate-card">
+                <img src="/Certificate_Satisfactory.png" alt="Satisfactory Certificate" />
+                <h3>Satisfactory Rating</h3>
+                <p>Successfully shipped the minimum requirements. Demonstrates base level full-stack competence.</p>
               </div>
             </ScrollReveal>
           </div>
         </div>
       </section>
 
-      {/* ── Leaderboard ── */}
-      <section id="leaderboard" className="section leaderboard">
+      {/* ── Testimonials ── */}
+      <section className="section section--gray">
         <div className="container">
           <ScrollReveal>
-            <div className="leaderboard__header">
-              <div className="leaderboard__live">
-                <span className="leaderboard__live-dot" />
-                <span className="leaderboard__live-text">Live Rankings</span>
-              </div>
-              <h2>Top Performers</h2>
-              <p>Real-time leaderboard tracking project scores, quizzes, and participation.</p>
+            <div className="tracks__header">
+              <div className="section-tag"><span>Student Outcomes</span></div>
+              <h2>Builders Who Shipped Real Work</h2>
+              <p>Not marketing fluff — actual results from students who showed up and delivered.</p>
             </div>
           </ScrollReveal>
-
-          <ScrollReveal>
-            <div className="leaderboard__table-wrap">
-              <div className="leaderboard__table-header">
-                <span>Rank</span>
-                <span>Developer</span>
-                <span>Track</span>
-                <span>Score</span>
-              </div>
-
-              {leaderboardData.map((entry) => (
-                <div key={entry.rank} className="leaderboard__row">
-                  <span className={`leaderboard__rank ${
-                    entry.rank === 1 ? 'leaderboard__rank--gold' :
-                    entry.rank === 2 ? 'leaderboard__rank--silver' :
-                    entry.rank === 3 ? 'leaderboard__rank--bronze' : ''
-                  }`}>
-                    #{String(entry.rank).padStart(2, '0')}
-                  </span>
-                  <div className="leaderboard__user">
-                    <div
-                      className="leaderboard__avatar"
-                      style={{ backgroundColor: entry.color }}
-                    >
-                      {entry.initials}
-                    </div>
-                    <span className="leaderboard__name">{entry.name}</span>
+          <div className="testimonials__grid">
+            <ScrollReveal delay={1}>
+              <div className="testimonial-card">
+                <div className="testimonial-card__stars">★★★★★</div>
+                <p className="testimonial-card__quote">&ldquo;I spent 6 months watching YouTube tutorials and felt like I knew nothing. 6 weeks in Foundation Track and I shipped my first full-stack app. The mentor feedback was brutal — but exactly what I needed.&rdquo;</p>
+                <div className="testimonial-card__footer">
+                  <div className="testimonial-card__avatar" style={{ background: '#6366f1' }}>RK</div>
+                  <div className="testimonial-card__info">
+                    <div className="testimonial-card__name">Rishi Kumar</div>
+                    <div className="testimonial-card__meta">Foundation → Builder Track</div>
                   </div>
-                  <span className="leaderboard__track">{entry.track}</span>
-                  <span className="leaderboard__score">{entry.score}</span>
+                  <span className="testimonial-card__outcome testimonial-card__outcome--exceptional">Exceptional</span>
                 </div>
-              ))}
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={2}>
+              <div className="testimonial-card">
+                <div className="testimonial-card__stars">★★★★★</div>
+                <p className="testimonial-card__quote">&ldquo;The certificate verification link on my resume actually gets clicked. Two interviewers mentioned they verified it before calling me. That&apos;s the difference between a real credential and a PDF.&rdquo;</p>
+                <div className="testimonial-card__footer">
+                  <div className="testimonial-card__avatar" style={{ background: '#14b8a6' }}>AP</div>
+                  <div className="testimonial-card__info">
+                    <div className="testimonial-card__name">Ananya Pillai</div>
+                    <div className="testimonial-card__meta">Builder Track · Core Intern</div>
+                  </div>
+                  <span className="testimonial-card__outcome testimonial-card__outcome--internship">Internship</span>
+                </div>
+              </div>
+            </ScrollReveal>
+            <ScrollReveal delay={3}>
+              <div className="testimonial-card">
+                <div className="testimonial-card__stars">★★★★★</div>
+                <p className="testimonial-card__quote">&ldquo;₹2,000 for Foundation felt like a lot when I was a student. Looking back, it&apos;s the best money I spent. I upgraded to Builder at 50% off and now I&apos;m building production systems at my job.&rdquo;</p>
+                <div className="testimonial-card__footer">
+                  <div className="testimonial-card__avatar" style={{ background: '#f59e0b' }}>MV</div>
+                  <div className="testimonial-card__info">
+                    <div className="testimonial-card__name">Mohammed Vaseem</div>
+                    <div className="testimonial-card__meta">Foundation Track</div>
+                  </div>
+                  <span className="testimonial-card__outcome testimonial-card__outcome--placed">Placed</span>
+                </div>
+              </div>
+            </ScrollReveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ── */}
+      <section id="faq" className="section">
+        <div className="container">
+          <ScrollReveal>
+            <div className="tracks__header">
+              <div className="section-tag"><span>FAQ</span></div>
+              <h2>Questions Before You Apply</h2>
+              <p>The things students usually ask us before clicking &ldquo;Apply Now.&rdquo;</p>
+            </div>
+          </ScrollReveal>
+          <ScrollReveal>
+            <div className="faq-wrap">
+              <FAQ />
             </div>
           </ScrollReveal>
         </div>
@@ -389,20 +546,36 @@ export default function HomePage() {
                 Join the next cohort of builders. Applications close when seats fill up —
                 don&apos;t wait.
               </p>
-              <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <div className="cta-actions">
                 <Link href="/apply" className="btn btn--sky btn--lg">
                   Apply Now <span className="btn-arrow">→</span>
                 </Link>
-                <Link href="/#tracks" className="btn btn--secondary btn--lg" style={{ borderColor: 'rgba(255,255,255,0.2)', color: '#fff' }}>
-                  View Tracks
+                <Link href="/#faq" className="btn btn--secondary btn--lg cta-btn--outline">
+                  Read FAQ
                 </Link>
               </div>
+              <p className="cta-section__guarantee">🔒 7-day money-back guarantee · No hidden fees · Results in 48 hrs</p>
             </div>
           </ScrollReveal>
         </div>
       </section>
 
       <Footer />
+
+      {/* ── Floating WhatsApp Button ── */}
+      <a
+        href="https://wa.me/919128699369?text=Hi%2C%20I%27m%20interested%20in%20TrevorOS%20Labs."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-float"
+        aria-label="Chat on WhatsApp"
+      >
+        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path d="M12.004 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2 22l4.977-1.404A9.953 9.953 0 0012.004 22C17.53 22 22 17.523 22 12S17.53 2 12.004 2zm0 18.18a8.164 8.164 0 01-4.162-1.138l-.299-.177-3.092.872.875-3.067-.194-.315A8.154 8.154 0 013.82 12c0-4.514 3.671-8.18 8.184-8.18 4.514 0 8.18 3.666 8.18 8.18 0 4.513-3.666 8.18-8.18 8.18z"/>
+        </svg>
+        <span className="whatsapp-float__label">Need help? Chat</span>
+      </a>
     </>
   );
 }

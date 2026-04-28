@@ -1,68 +1,200 @@
-import type { Metadata } from 'next';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
-export const metadata: Metadata = {
-  title: 'Terms of Service — TREVORORS LABS',
-  description: 'Read TREVORORS LABS Terms of Service — the rules and conditions governing use of our platform and programs.',
+export const metadata = {
+  title: 'Terms of Service — TrevorOS Labs',
+  description: 'Terms of Service governing your use of TrevorOS Labs, a program by TREVOROS FINTECH PRIVATE LIMITED.',
 };
 
-const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
-  <div style={{ marginBottom: 48 }}>
-    <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-navy)', marginBottom: 16, paddingBottom: 12, borderBottom: '1px solid var(--color-gray-100)' }}>{title}</h2>
-    <div style={{ color: 'var(--color-gray-600)', lineHeight: 1.8, fontSize: '0.95rem' }}>{children}</div>
-  </div>
-);
-
-export default function TermsPage() {
+export default function TermsOfService() {
   return (
     <>
       <Navbar />
-      <main>
-        <section style={{ padding: '64px 0 40px', borderBottom: '1px solid var(--color-gray-100)' }}>
-          <div className="container" style={{ maxWidth: 760 }}>
-            <div className="section-tag" style={{ marginBottom: 16 }}><span>Legal</span></div>
-            <h1 style={{ fontSize: '2.25rem', fontWeight: 800, color: 'var(--color-navy)', marginBottom: 12 }}>Terms of Service</h1>
-            <p style={{ color: 'var(--color-gray-400)', fontSize: '0.85rem', fontFamily: 'var(--font-mono)' }}>Last updated: April 4, 2026</p>
-          </div>
-        </section>
+      <main className="legal-page">
+        <div className="container">
+          <div className="legal-card">
+            <div className="legal-header">
+              <div className="legal-header__tag">Legal</div>
+              <h1 className="legal-header__title">Terms of Service</h1>
+              <p className="legal-header__meta">
+                Last updated: April 28, 2025 &nbsp;·&nbsp; Effective: April 28, 2025
+              </p>
+            </div>
 
-        <section style={{ padding: '64px 0' }}>
-          <div className="container" style={{ maxWidth: 760 }}>
-            <Section title="1. Acceptance of Terms">
-              <p>By registering for or accessing TREVORORS LABS, operated by TREVOROS FINTECH PRIVATE LIMITED ("the Platform"), you agree to be bound by these Terms of Service. If you do not agree, do not use the Platform.</p>
-            </Section>
-            <Section title="2. Eligibility">
-              <p>You must be at least 18 years old to register on the Platform. By creating an account, you represent that you meet this requirement and that all information you provide is accurate.</p>
-            </Section>
-            <Section title="3. Program Enrollment">
-              <p>Enrollment in a cohort is contingent on: (a) completing the application, (b) receiving an acceptance decision from TREVORORS LABS, and (c) completing the required payment.</p>
-              <p style={{ marginTop: 12 }}>Acceptance decisions are made solely at the discretion of TREVORORS LABS and are non-negotiable.</p>
-            </Section>
-            <Section title="4. Payments">
-              <p>All program fees are listed at the time of enrollment and are payable via Razorpay. By completing payment, you agree to our Refund Policy. Fees are listed in Indian Rupees (INR) inclusive of applicable taxes.</p>
-            </Section>
-            <Section title="5. Certificates">
-              <p>Certificates are issued based on verified performance scores. TREVORORS LABS reserves the right to revoke certificates if fraud, academic dishonesty, or misrepresentation is discovered. Certificate verification is accessible publicly at <strong>/verify</strong>.</p>
-            </Section>
-            <Section title="6. Code of Conduct">
-              <p>You agree not to: plagiarize project submissions, share cohort materials publicly without permission, harass or abuse other students or staff, or attempt to circumvent platform security.</p>
-              <p style={{ marginTop: 12 }}>Violation of the Code of Conduct may result in immediate removal from the cohort without refund.</p>
-            </Section>
-            <Section title="7. Intellectual Property">
-              <p>All course materials, curriculum, and platform content are the intellectual property of TREVORORS LABS. Projects you create during cohorts remain yours; you grant TREVORORS LABS a non-exclusive licence to reference them for marketing purposes with attribution.</p>
-            </Section>
-            <Section title="8. Limitation of Liability">
-              <p>TREVORORS LABS is not liable for indirect, incidental, or consequential damages arising from your use of the platform. Our total liability shall not exceed the fees you paid in the three months preceding the claim.</p>
-            </Section>
-            <Section title="9. Changes to Terms">
-              <p>We may update these Terms at any time. Continued use of the Platform after changes constitutes acceptance. We will notify active students of material changes via email.</p>
-            </Section>
-            <Section title="10. Contact">
-              <p>Questions? Reach us at <a href="mailto:legal@trevoros.com" style={{ color: 'var(--color-sky)' }}>legal@trevoros.com</a>.</p>
-            </Section>
+            <div className="legal-body">
+              <section className="legal-section">
+                <h2>1. Acceptance of Terms</h2>
+                <p>
+                  These Terms of Service (&ldquo;Terms&rdquo;) constitute a legally binding agreement
+                  between you (&ldquo;Student,&rdquo; &ldquo;Applicant,&rdquo; or &ldquo;User&rdquo;)
+                  and <strong>TREVOROS FINTECH PRIVATE LIMITED</strong>, a company incorporated
+                  under the Companies Act, 2013, operating the <strong>TrevorOS Labs</strong>{' '}
+                  platform (&ldquo;Platform&rdquo;).
+                </p>
+                <p>
+                  By submitting an application, making a payment, or accessing any part of the
+                  Platform, you confirm that you have read, understood, and agree to be bound by
+                  these Terms. If you do not agree, do not use the Platform.
+                </p>
+              </section>
+
+              <section className="legal-section">
+                <h2>2. Program Overview</h2>
+                <p>
+                  TrevorOS Labs offers structured, performance-based developer training programs
+                  (&ldquo;Programs&rdquo;) delivered in cohort batches:
+                </p>
+                <ul>
+                  <li><strong>Foundation Track:</strong> 6-week beginner program (₹2,000 per cohort).</li>
+                  <li><strong>Builder Track:</strong> 8-week advanced program (₹4,000 per cohort).</li>
+                </ul>
+                <p>
+                  Program content, batch dates, curriculum, and pricing are subject to change at our
+                  discretion. We will communicate material changes to enrolled students via email.
+                </p>
+              </section>
+
+              <section className="legal-section">
+                <h2>3. Eligibility</h2>
+                <ul>
+                  <li>You must be at least 16 years of age to apply.</li>
+                  <li>If you are under 18, you confirm that you have obtained parental or guardian consent.</li>
+                  <li>You must provide accurate, complete, and truthful information during the application process.</li>
+                  <li>Submission of false information is grounds for immediate disqualification without refund.</li>
+                </ul>
+              </section>
+
+              <section className="legal-section">
+                <h2>4. Application &amp; Admission</h2>
+                <p>
+                  Submitting an application does not guarantee admission. We review all applications
+                  within 48 business hours and reserve the right to accept or decline any application
+                  at our sole discretion without providing reasons.
+                </p>
+                <p>
+                  An offer of admission is confirmed only upon receipt of full program payment. Seats
+                  are not reserved until payment is completed.
+                </p>
+              </section>
+
+              <section className="legal-section">
+                <h2>5. Payment</h2>
+                <ul>
+                  <li>All payments are processed securely via <strong>Razorpay</strong>.</li>
+                  <li>Program fees are quoted in Indian Rupees (INR) and are inclusive of all applicable taxes.</li>
+                  <li>You are responsible for any bank charges, transaction fees, or currency conversion costs imposed by your payment provider.</li>
+                  <li>Payment constitutes your agreement to these Terms.</li>
+                </ul>
+              </section>
+
+              <section className="legal-section">
+                <h2>6. Student Obligations</h2>
+                <p>As an enrolled student, you agree to:</p>
+                <ul>
+                  <li>Attend live sessions and complete project submissions in accordance with the program schedule.</li>
+                  <li>Submit only your own original work. Plagiarism, copying, or misrepresentation of work is strictly prohibited and will result in disqualification.</li>
+                  <li>Treat all mentors, staff, and fellow students with respect. Harassment, abuse, or disruptive behaviour is grounds for immediate removal without refund.</li>
+                  <li>Not share, distribute, or reproduce program materials, recordings, or curriculum content without written permission.</li>
+                  <li>Maintain the confidentiality of your account credentials.</li>
+                </ul>
+              </section>
+
+              <section className="legal-section">
+                <h2>7. Performance Assessment &amp; Certificates</h2>
+                <p>
+                  Your program performance is assessed on a weekly basis by program mentors. Final
+                  certificate grades — <strong>Exceptional</strong>, <strong>Strong</strong>, or{' '}
+                  <strong>Satisfactory</strong> — are determined solely at the discretion of the
+                  assessment team based on objective scoring criteria.
+                </p>
+                <p>
+                  Certificate grades are final and non-negotiable. Certificates are issued
+                  electronically and carry a unique verification code. We do not guarantee employment
+                  outcomes as a result of holding a TrevorOS Labs certificate.
+                </p>
+              </section>
+
+              <section className="legal-section">
+                <h2>8. Paid Internship Opportunity</h2>
+                <p>
+                  Top-performing Builder Track students may be offered a paid Core Internship at
+                  TREVOROS FINTECH PRIVATE LIMITED. This opportunity is entirely at the Company&apos;s
+                  discretion and is subject to availability, performance thresholds, and separate
+                  employment terms to be agreed upon at the time of offer. No student is guaranteed
+                  an internship by virtue of enrolment alone.
+                </p>
+              </section>
+
+              <section className="legal-section">
+                <h2>9. Intellectual Property</h2>
+                <p>
+                  All curriculum content, session recordings, slides, assessments, and materials
+                  provided through the Platform are the exclusive intellectual property of
+                  TREVOROS FINTECH PRIVATE LIMITED. You are granted a limited, non-transferable,
+                  non-exclusive licence to access and use these materials solely for your personal
+                  learning during the enrolled program period.
+                </p>
+                <p>
+                  You retain full ownership of any original projects and code you create during the
+                  program, provided they do not incorporate Company proprietary materials.
+                </p>
+              </section>
+
+              <section className="legal-section">
+                <h2>10. Limitation of Liability</h2>
+                <p>
+                  To the maximum extent permitted by applicable law, TREVOROS FINTECH PRIVATE LIMITED
+                  shall not be liable for any indirect, incidental, special, consequential, or
+                  punitive damages, including loss of income, employment, or opportunity, arising
+                  from your use of or inability to use the Platform or Programs.
+                </p>
+                <p>
+                  Our total aggregate liability to you for any claim arising under these Terms shall
+                  not exceed the program fee you paid for the relevant cohort.
+                </p>
+              </section>
+
+              <section className="legal-section">
+                <h2>11. Modifications &amp; Termination</h2>
+                <p>
+                  We reserve the right to modify, suspend, or discontinue any Program or the
+                  Platform at any time. In the event of a Program cancellation by us prior to
+                  commencement, enrolled students will receive a full refund. We may terminate your
+                  access for violations of these Terms without notice.
+                </p>
+              </section>
+
+              <section className="legal-section">
+                <h2>12. Governing Law &amp; Dispute Resolution</h2>
+                <p>
+                  These Terms shall be governed by and construed in accordance with the laws of
+                  India. Any dispute arising out of or in connection with these Terms shall first be
+                  attempted to be resolved through good-faith negotiation. If unresolved within 30
+                  days, disputes shall be subject to the exclusive jurisdiction of the courts located
+                  in <strong>India</strong>.
+                </p>
+              </section>
+
+              <section className="legal-section">
+                <h2>13. Contact</h2>
+                <div className="legal-contact">
+                  <p><strong>TREVOROS FINTECH PRIVATE LIMITED</strong></p>
+                  <p>Email: <a href="mailto:labs@trevoros.com">labs@trevoros.com</a></p>
+                  <p>Phone: <a href="tel:+919128699369">+91 91286 99369</a></p>
+                </div>
+              </section>
+            </div>
+
+            <div className="legal-footer">
+              <Link href="/privacy">Privacy Policy</Link>
+              <span>·</span>
+              <Link href="/refund">Refund Policy</Link>
+              <span>·</span>
+              <Link href="/">Back to Home</Link>
+            </div>
           </div>
-        </section>
+        </div>
       </main>
       <Footer />
     </>

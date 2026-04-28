@@ -13,9 +13,19 @@ export default function Footer() {
               <div className="footer__brand-name" style={{ margin: 0 }}>TREVORORS LABS</div>
             </div>
             <p className="footer__brand-desc">
-              Performance-based developer training and selection. 
-              Build real skills, prove your ability, get hired.
+              A TREVOROS FINTECH PRIVATE LIMITED initiative to make students ready
+              with real skills and the right mindset — before they enter the industry.
             </p>
+            <div className="footer__contact">
+              <a href="tel:+919128699369" className="footer__contact-item">
+                <span className="footer__contact-icon">📞</span>
+                +91 91286 99369
+              </a>
+              <a href="mailto:labs@trevoros.com" className="footer__contact-item">
+                <span className="footer__contact-icon">✉️</span>
+                labs@trevoros.com
+              </a>
+            </div>
           </div>
 
           <div className="footer__links">
@@ -23,14 +33,13 @@ export default function Footer() {
               <h4>Platform</h4>
               <Link href="/#tracks">Tracks</Link>
               <Link href="/#how-it-works">How It Works</Link>
-              <Link href="/#leaderboard">Leaderboard</Link>
+              <Link href="/#faq">FAQ</Link>
               <Link href="/apply">Apply</Link>
             </div>
             <div className="footer__column">
               <h4>Company</h4>
               <Link href="/about">About</Link>
-              <Link href="/blog">Blog</Link>
-              <Link href="/careers">Careers</Link>
+              <Link href="/verify">Verify Certificate</Link>
               <Link href="/contact">Contact</Link>
             </div>
             <div className="footer__column">

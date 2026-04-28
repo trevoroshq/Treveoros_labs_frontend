@@ -25,7 +25,7 @@ export default function Navbar() {
           <div className="navbar__links">
             <Link href="/#tracks" className="navbar__link">Tracks</Link>
             <Link href="/#how-it-works" className="navbar__link">Process</Link>
-            <Link href="/#leaderboard" className="navbar__link">Leaderboard</Link>
+
             <Link href="/verify" className="navbar__link">Verify</Link>
           </div>
 
@@ -50,7 +50,7 @@ export default function Navbar() {
       <div className={`mobile-nav ${mobileOpen ? 'open' : ''}`}>
         <Link href="/#tracks" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Tracks</Link>
         <Link href="/#how-it-works" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Process</Link>
-        <Link href="/#leaderboard" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Leaderboard</Link>
+
         <Link href="/verify" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Verify</Link>
         <Link href="/login" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Sign In</Link>
         <Link href="/apply" className="mobile-nav__link" onClick={() => setMobileOpen(false)}>Apply Now</Link>

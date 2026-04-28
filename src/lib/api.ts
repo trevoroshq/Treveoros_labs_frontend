@@ -154,8 +154,6 @@ export const certificatesApi = {
 
 // Performance API
 export const performanceApi = {
-  leaderboard: () => api('/performance/leaderboard'),
-
   getByUser: (userId: string) => api(`/performance/${userId}`),
 
   update: (userId: string, data: unknown) =>

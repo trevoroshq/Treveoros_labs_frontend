@@ -5,8 +5,8 @@ import { AuthProvider } from "@/lib/auth-context";
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'),
   title: {
-    default: "TREVORORS LABS — Developer Training & Selection",
-    template: "%s | TREVORORS LABS",
+    default: "TREVOROS LABS",
+    template: "%s | TREVOROS LABS",
   },
   description:
     "Performance-based developer training and selection platform. Join the Foundation or Builder track to build real skills, earn verified certificates, and get hired.",
@@ -15,9 +15,9 @@ export const metadata: Metadata = {
     "foundation track", "software engineering course", "certificate verification",
     "junior developer program", "project-based learning", "developer selection"
   ],
-  authors: [{ name: "TREVORORS LABS", url: "https://trevoros.com" }],
-  creator: "TREVORORS LABS",
-  publisher: "TREVORORS LABS",
+  authors: [{ name: "TREVOROS LABS", url: "https://trevoros.com" }],
+  creator: "TREVOROS LABS",
+  publisher: "TREVOROS LABS",
   robots: {
     index: true,
     follow: true,
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_IN",
-    siteName: "TREVORORS LABS",
-    title: "TREVORORS LABS — Developer Training & Selection",
+    siteName: "TREVOROS LABS",
+    title: "TREVOROS LABS — Developer Training & Selection",
     description:
       "Performance-based developer training and selection platform. Build real skills, prove your ability, get hired.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TREVORORS LABS — Developer Training & Selection",
+    title: "TREVOROS LABS — Developer Training & Selection",
     description: "Performance-based developer training. Build. Prove. Get hired.",
     creator: "@trevoros_labs",
   },
