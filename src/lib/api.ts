@@ -33,10 +33,9 @@ async function api<T = unknown>(endpoint: string, options: ApiOptions = {}): Pro
     method,
     credentials: 'include',
     signal: controller.signal,
-    headers: {
-      'Content-Type': 'application/json',
-      ...headers,
-    },
+    // Only set Content-Type for requests with a body — sending it on GET/HEAD
+    // triggers a CORS preflight that can fail with strict server configs.
+    headers: body ? { 'Content-Type': 'application/json', ...headers } : { ...headers },
   };
 
   if (body) {
