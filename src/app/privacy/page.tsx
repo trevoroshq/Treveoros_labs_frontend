@@ -81,7 +81,6 @@ export default function PrivacyPolicy() {
                 <p>We may share your information with:</p>
                 <ul>
                   <li><strong>Razorpay:</strong> Our payment gateway partner, solely for processing transactions. Razorpay&apos;s privacy policy governs their data use.</li>
-                  <li><strong>Google (OAuth):</strong> If you choose to sign in with Google, authentication is handled by Google&apos;s OAuth 2.0 system.</li>
                   <li><strong>Internal Mentors:</strong> Program mentors may access your name, submitted projects, and performance scores for evaluation purposes.</li>
                   <li><strong>Legal Authorities:</strong> Where required by law, court order, or governmental regulation.</li>
                 </ul>
