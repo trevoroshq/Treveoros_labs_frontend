@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import Navbar from '@/components/Navbar';
@@ -26,6 +26,13 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
+  // Show OAuth failure reason if redirected back from backend
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const oauthError = params.get('error');
+    if (oauthError === 'oauth_failed') setError('Google sign-in failed. Please try again or use email/password.');
+  }, []);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
@@ -44,7 +51,7 @@ export default function LoginPage() {
 
   const oauthLogin = (provider: 'google') => {
     // Must go directly to backend URL — Next.js rewrite proxy cannot relay OAuth redirect chains
-    let backendUrl = (process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:4000').trim().replace(/\/$/, '');
+    let backendUrl = (process.env.NEXT_PUBLIC_BACKEND_URL || 'https://api.labs.trevoros.com').trim().replace(/\/$/, '');
     // Guard: missing protocol makes the browser treat the value as a relative path
     if (!backendUrl.startsWith('http://') && !backendUrl.startsWith('https://')) {
       backendUrl = `https://${backendUrl}`;
