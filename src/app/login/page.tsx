@@ -43,7 +43,9 @@ export default function LoginPage() {
   };
 
   const oauthLogin = (provider: 'google') => {
-    window.location.href = `/api/auth/${provider}`;
+    // Must go directly to backend — OAuth redirects don't work through Next.js rewrite proxy
+    const backendUrl = process.env.NEXT_PUBLIC_API_URL?.replace('/api', '') || 'http://localhost:4000';
+    window.location.href = `${backendUrl}/api/auth/${provider}`;
   };
 
   return (
