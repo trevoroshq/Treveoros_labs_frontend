@@ -26,11 +26,12 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // Show OAuth failure reason if redirected back from backend
+  // Show OAuth failure reason if redirected back from backend or dashboard
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const oauthError = params.get('error');
     if (oauthError === 'oauth_failed') setError('Google sign-in failed. Please try again or use email/password.');
+    if (oauthError === 'session_lost') setError('Session could not be verified after Google sign-in. Please try again.');
   }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {

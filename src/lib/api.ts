@@ -1,6 +1,9 @@
-const API_BASE = typeof window !== 'undefined'
-  ? '/api'  // browser: use Next.js rewrite proxy (same-origin → cookies work)
-  : (process.env.NEXT_PUBLIC_API_URL || 'http://localhost:4000/api'); // SSR: direct
+// Use the direct backend URL when available so the browser sends cookies itself
+// rather than relying on the Next.js proxy to forward them.
+// NEXT_PUBLIC_API_URL: https://api.labs.trevoros.com/api (set in .env.local + deployment env)
+// Falls back to the Next.js proxy (/api) if the var isn't available at build time.
+const API_BASE = process.env.NEXT_PUBLIC_API_URL
+  || (typeof window !== 'undefined' ? '/api' : 'http://localhost:4000/api');
 
 interface ApiOptions {
   method?: string;

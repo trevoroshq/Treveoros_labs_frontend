@@ -53,7 +53,8 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (!authLoading && !user) {
-      router.push('/login');
+      const fromOAuth = new URLSearchParams(window.location.search).get('oauth_success') === 'true';
+      router.push(fromOAuth ? '/login?error=session_lost' : '/login');
     }
   }, [user, authLoading, router]);
 

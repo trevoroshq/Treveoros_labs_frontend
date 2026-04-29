@@ -1,7 +1,7 @@
 'use client';
 
 import { createContext, useContext, useState, useEffect, useCallback, ReactNode } from 'react';
-import { authApi } from '@/lib/api';
+import { authApi, ApiError } from '@/lib/api';
 
 interface User {
   id: string;
@@ -27,16 +27,29 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   const refreshUser = useCallback(async () => {
+    let userData: User | null = null;
     try {
-      // Use short timeout — don't block page rendering if backend is down
-      const data = await authApi.me({ timeoutMs: 3000 }) as { user: User };
-      setUser(data.user);
-    } catch (err) {
-      console.warn('[AuthProvider] Auth check failed:', err instanceof Error ? err.message : err);
-      setUser(null);
-    } finally {
-      setLoading(false);
+      const data = await authApi.me() as { user: User };
+      userData = data.user;
+    } catch (firstErr) {
+      // For genuine 401s (no/invalid token), don't retry — user is logged out
+      const isUnauthorized = firstErr instanceof ApiError && firstErr.status === 401;
+      if (!isUnauthorized) {
+        // Transient failure (cold DB start, timeout, network blip) — retry once
+        try {
+          await new Promise(r => setTimeout(r, 1500));
+          const data = await authApi.me() as { user: User };
+          userData = data.user;
+        } catch {
+          console.warn('[AuthProvider] Auth retry also failed');
+        }
+      }
+      if (userData === null) {
+        console.warn('[AuthProvider] Auth check failed:', firstErr instanceof Error ? firstErr.message : firstErr);
+      }
     }
+    setUser(userData);
+    setLoading(false);
   }, []);
 
   // Only run on mount - refreshUser is stable with no dependencies
