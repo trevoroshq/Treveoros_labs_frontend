@@ -39,9 +39,10 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
+  // Only run on mount - refreshUser is stable with no dependencies
   useEffect(() => {
     refreshUser();
-  }, [refreshUser]);
+  }, []);
 
   const login = async (email: string, password: string) => {
     const data = await authApi.login({ email, password }) as { user: User };
