@@ -81,11 +81,13 @@ export default function AdminBatchesPage() {
 
   const fetchBatches = useCallback(async () => {
     setLoading(true);
+    setActionError(null);
     try {
       const data = await batchesApi.list() as { batches: Batch[] };
       setBatches(data.batches);
-    } catch {
-      setActionError('Failed to load batches.');
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Failed to load batches.';
+      setActionError(`Failed to load batches: ${msg}`);
     } finally {
       setLoading(false);
     }
@@ -171,8 +173,9 @@ export default function AdminBatchesPage() {
       await batchesApi.remove(id);
       flash(`"${name}" deactivated.`);
       fetchBatches();
-    } catch {
-      setActionError('Failed to deactivate batch.');
+    } catch (err: unknown) {
+      const msg = err instanceof Error ? err.message : 'Failed to deactivate batch.';
+      setActionError(`Failed to deactivate batch: ${msg}`);
     }
   }
 
