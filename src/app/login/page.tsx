@@ -43,8 +43,14 @@ export default function LoginPage() {
   };
 
   const oauthLogin = (provider: 'google') => {
-    // Must go directly to backend — OAuth redirects don't work through Next.js rewrite proxy
-    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:4000';
+    // Must go directly to backend URL — Next.js rewrite proxy cannot relay OAuth redirect chains
+    let backendUrl = (process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:4000').trim().replace(/\/$/, '');
+    // Guard: missing protocol makes the browser treat the value as a relative path
+    if (!backendUrl.startsWith('http://') && !backendUrl.startsWith('https://')) {
+      backendUrl = `https://${backendUrl}`;
+    }
+    // Guard: strip accidental /api suffix (NEXT_PUBLIC_API_URL has it; NEXT_PUBLIC_BACKEND_URL must not)
+    backendUrl = backendUrl.replace(/\/api$/, '');
     window.location.href = `${backendUrl}/api/auth/${provider}`;
   };
 
