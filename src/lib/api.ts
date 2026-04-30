@@ -10,6 +10,7 @@ interface ApiOptions {
   body?: unknown;
   headers?: Record<string, string>;
   timeoutMs?: number;
+  skipRefresh?: boolean; // Skip refresh retry for this request
 }
 
 class ApiError extends Error {
@@ -23,8 +24,33 @@ class ApiError extends Error {
   }
 }
 
+let isRefreshing = false;
+let refreshPromise: Promise<void> | null = null;
+
+async function refreshToken(): Promise<void> {
+  if (isRefreshing) {
+    // If refresh is already in progress, wait for it
+    return refreshPromise!;
+  }
+
+  isRefreshing = true;
+  refreshPromise = (async () => {
+    try {
+      await fetch(`${API_BASE}/auth/refresh`, {
+        method: 'POST',
+        credentials: 'include',
+      });
+    } finally {
+      isRefreshing = false;
+      refreshPromise = null;
+    }
+  })();
+
+  return refreshPromise;
+}
+
 async function api<T = unknown>(endpoint: string, options: ApiOptions = {}): Promise<T> {
-  const { method = 'GET', body, headers = {}, timeoutMs = 8000 } = options;
+  const { method = 'GET', body, headers = {}, timeoutMs = 8000, skipRefresh = false } = options;
 
   const controller = new AbortController();
   const timeoutId = setTimeout(() => controller.abort(), timeoutMs);
@@ -56,6 +82,23 @@ async function api<T = unknown>(endpoint: string, options: ApiOptions = {}): Pro
 
   if (!response.ok) {
     const data = await response.json().catch(() => ({}));
+
+    // If we got a 401 and haven't already tried to refresh, try refreshing the token
+    if (response.status === 401 && !skipRefresh && endpoint !== '/auth/refresh') {
+      try {
+        await refreshToken();
+        // Retry the original request with skipRefresh=true to prevent infinite loops
+        return api<T>(endpoint, { ...options, skipRefresh: true });
+      } catch (refreshErr) {
+        // Refresh failed, return the original 401 error
+        throw new ApiError(
+          data.message || `Request failed with status ${response.status}`,
+          response.status,
+          data
+        );
+      }
+    }
+
     throw new ApiError(
       data.message || `Request failed with status ${response.status}`,
       response.status,
@@ -76,6 +119,8 @@ export const authApi = {
     api('/auth/login', { method: 'POST', body: data }),
 
   logout: () => api('/auth/logout', { method: 'POST' }),
+
+  refresh: () => api('/auth/refresh', { method: 'POST', skipRefresh: true }),
 
   me: (opts?: Pick<ApiOptions, 'timeoutMs'>) => api('/auth/me', opts),
 };
