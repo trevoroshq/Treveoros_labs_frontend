@@ -82,26 +82,28 @@ function ApplyForm() {
   const [submitted, setSubmitted] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [batchesList, setBatchesList] = useState<{label: string, value: string, track: string}[]>([]);
+  const [batchLoadError, setBatchLoadError] = useState(false);
 
-  // Fetch active batches dynamically
+  // Fetch active batches dynamically (public endpoint — no auth required)
   useEffect(() => {
-    if (user) {
-      batchesApi.list()
-        .then((data: any) => {
-          const batches = data.batches || [];
-          const activeBatches = batches.filter((b: any) => b.isActive);
-          const mapped = activeBatches.map((b: any) => {
-            const date = new Date(b.startDate);
-            const label = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
-            const value = b.startDate.split('T')[0];
-            return { label, value, track: b.track };
-          });
-          mapped.sort((a: any, b: any) => new Date(a.value).getTime() - new Date(b.value).getTime());
-          setBatchesList(mapped);
-        })
-        .catch(console.error);
-    }
-  }, [user]);
+    batchesApi.list()
+      .then((data: any) => {
+        const batches = data.batches || [];
+        const activeBatches = batches.filter((b: any) => b.isActive);
+        const mapped = activeBatches.map((b: any) => {
+          const date = new Date(b.startDate);
+          const label = new Intl.DateTimeFormat('en-GB', { day: 'numeric', month: 'long', year: 'numeric' }).format(date);
+          const value = b.startDate.split('T')[0];
+          return { label, value, track: b.track };
+        });
+        mapped.sort((a: any, b: any) => new Date(a.value).getTime() - new Date(b.value).getTime());
+        setBatchesList(mapped);
+      })
+      .catch((err) => {
+        console.error('Failed to load batches:', err);
+        setBatchLoadError(true);
+      });
+  }, []);
 
   // Pre-fill name/email from auth user
   useEffect(() => {
@@ -419,8 +421,12 @@ function ApplyForm() {
                           </button>
                         ))
                       ) : (
-                        <div style={{ color: 'var(--color-gray-500)', fontSize: '0.9rem', gridColumn: '1 / -1', padding: '12px 0' }}>
-                          {form.track ? 'No active batches available for this track right now.' : 'Please select a track first to view available batches.'}
+                        <div style={{ color: batchLoadError ? 'var(--color-red, #dc2626)' : 'var(--color-gray-500)', fontSize: '0.9rem', gridColumn: '1 / -1', padding: '12px 0' }}>
+                          {batchLoadError
+                            ? 'Could not load batches. Please refresh the page and try again.'
+                            : form.track
+                              ? 'No active batches available for this track right now.'
+                              : 'Please select a track first to view available batches.'}
                         </div>
                       )}
                     </div>
